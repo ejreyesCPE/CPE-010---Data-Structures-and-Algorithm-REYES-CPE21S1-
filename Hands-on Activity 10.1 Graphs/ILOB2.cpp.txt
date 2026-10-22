@@ -1,0 +1,23 @@
+#include <iostream>
+#include "ilob2.h"
+
+template <typename T>
+void test_BFS() {
+    // Create an instance of and print the graph
+    auto G = create_reference_graph<unsigned>();
+    std::cout << G << std::endl;
+
+    // Run BFS starting from vertex ID 1 and print the order
+    // in which vertices are visited.
+    std::cout << "BFS Order of vertices: " << std::endl;
+    auto bfs_visit_order = breadth_first_search(G, 1);
+    for (auto v : bfs_visit_order) {
+        std::cout << v << std::endl;
+    }
+}
+
+int main() {
+    using T = unsigned;
+    test_BFS<T>();
+    return 0;
+}
